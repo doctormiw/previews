@@ -5,6 +5,12 @@ Interactive 3D playable ads, built with [drm-engine](https://github.com/doctormi
 <table>
 <tr>
 <td align="center" valign="top">
+<a href="https://doctormiw.github.io/previews/hole/"><img src="hole/cover.jpg" width="240" alt="HoleGame"></a><br>
+<b>HoleGame</b><br>
+<a href="https://doctormiw.github.io/previews/hole/">▶ Play online</a><br>
+<sub>2.3 MB · 2026-11-07</sub>
+</td>
+<td align="center" valign="top">
 <a href="https://doctormiw.github.io/previews/laptop/"><img src="laptop/cover.gif" width="240" alt="Break the Laptop"></a><br>
 <b>Break the Laptop</b><br>
 <a href="https://doctormiw.github.io/previews/laptop/">▶ Play online</a><br>
