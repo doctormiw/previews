@@ -24,6 +24,8 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:16p
 h1{font:700 clamp(28px,6vw,48px)/1.1 "JetBrains Mono",monospace;margin:0 0 12px;letter-spacing:-.03em;text-shadow:var(--glow)}
 h1::after{content:"\258c";margin-left:4px;color:var(--accent);animation:bl 1s steps(2) infinite}
 @keyframes bl{50%{opacity:0}}
+header .by{color:var(--accent);font-weight:700;letter-spacing:.06em;margin-bottom:8px;text-shadow:var(--glow)}
+footer{margin-top:48px;color:var(--dim);font-size:13px;text-align:center}
 header p{margin:0;color:var(--dim);max-width:520px}
 #theme{flex:none;padding:10px 14px;border:1px solid var(--accent);border-radius:2px;background:transparent;color:var(--accent);font:700 13px "JetBrains Mono",monospace;cursor:pointer;box-shadow:var(--glow)}
 #theme:hover{background:var(--accent);color:var(--bg)}
@@ -44,7 +46,7 @@ h2{font:700 18px "JetBrains Mono",monospace;margin:0}
 <div class="sweep"></div>
 <main>
 <header>
-<div><h1>Playable Ads Portfolio</h1><p>Interactive 3D playable ads. Tap a card to play in your browser (best on a phone).</p></div>
+<div><div class="by">&gt; Vitaly Melnikov</div><h1>Playable Ads Portfolio</h1><p>Interactive 3D playable ads. Tap a card to play in your browser (best on a phone).</p></div>
 <button id="theme" type="button">[ AMBER ]</button>
 </header>
 <div class="grid">
@@ -52,6 +54,7 @@ h2{font:700 18px "JetBrains Mono",monospace;margin:0}
 <a class="card" href="https://doctormiw.github.io/previews/hole/"><div class="cover"><img src="hole/cover.jpg" alt="HoleGame" loading="lazy"></div><div class="meta"><h2>HoleGame</h2><p>2.3 MB · 2026-11-07</p></div><span class="play">▶ Play</span></a>
 <a class="card" href="https://doctormiw.github.io/previews/laptop/"><div class="cover"><img src="laptop/cover.gif" alt="Break the Laptop" loading="lazy"></div><div class="meta"><h2>Break the Laptop</h2><p>2.5 MB · 2026-11-01</p></div><span class="play">▶ Play</span></a>
 </div>
+<footer>© Vitaly Melnikov</footer>
 </main>
 <script>
 var T=["amber","green","cyan","violet"],b=document.getElementById("theme"),d=document.documentElement;function set(n){d.dataset.theme=n;b.textContent="[ "+n.toUpperCase()+" ]"}set(d.dataset.theme||"amber");b.addEventListener("click",function(){var n=T[(T.indexOf(d.dataset.theme)+1)%T.length];set(n);try{localStorage.setItem("theme",n)}catch(e){}});

@@ -1,5 +1,7 @@
 # Playable Ads Portfolio
 
+**Vitaly Melnikov**
+
 Interactive 3D playable ads. Tap a picture to play the HTML version in your browser (best on a phone).
 
 <table>
