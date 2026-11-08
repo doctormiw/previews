@@ -5,8 +5,8 @@ Interactive 3D playable ads, built with [drm-engine](https://github.com/doctormi
 <table>
 <tr>
 <td align="center" valign="top">
-<a href="https://doctormiw.github.io/previews/car-smash/"><img src="car-smash/cover.jpg" width="240" alt="CarSmash (в разработке)"></a><br>
-<b>CarSmash (в разработке)</b><br>
+<a href="https://doctormiw.github.io/previews/car-smash/"><img src="car-smash/cover.jpg" width="240" alt="CarSmash"></a><br>
+<b>CarSmash</b> <i>(In development)</i><br>
 <a href="https://doctormiw.github.io/previews/car-smash/">▶ Play online</a><br>
 <sub>1.8 MB · 2026-11-08</sub>
 </td>

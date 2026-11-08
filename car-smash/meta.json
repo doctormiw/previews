@@ -1,6 +1,7 @@
 {
   "project": "car-smash",
-  "title": "CarSmash (в разработке)",
-  "bytes": 1790287,
-  "date": "2026-11-08"
+  "title": "CarSmash",
+  "bytes": 1790261,
+  "date": "2026-11-08",
+  "status": "In development"
 }

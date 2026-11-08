@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Playable Ads Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{--bg:#f5f4f0;--card:#fff;--text:#16161a;--dim:#6b6b76;--accent:#ff5c35;--line:#e4e2dc;--shadow:0 8px 30px rgba(0,0,0,.08)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e0f13;--card:#181a21;--text:#f1f1f4;--dim:#8d8f9c;--line:#262933;--shadow:0 8px 30px rgba(0,0,0,.45)}}
+:root[data-theme=dark]{--bg:#0e0f13;--card:#181a21;--text:#f1f1f4;--dim:#8d8f9c;--line:#262933;--shadow:0 8px 30px rgba(0,0,0,.45)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.5 Inter,system-ui,sans-serif;transition:background .25s,color .25s}
+main{max-width:1040px;margin:0 auto;padding:0 16px 64px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:48px 0 32px}
+h1{font:700 clamp(30px,6vw,52px)/1.05 "Space Grotesk",sans-serif;margin:0 0 12px;letter-spacing:-.02em}
+header p{margin:0;color:var(--dim);max-width:520px}
+header a{color:var(--accent);text-decoration:none}
+#theme{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:20px;cursor:pointer;box-shadow:var(--shadow)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.cover{position:relative;aspect-ratio:390/844;max-height:420px;overflow:hidden;background:var(--line)}
+.cover img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.badge{position:absolute;top:12px;left:12px;background:var(--accent);color:#fff;font:700 12px "Space Grotesk",sans-serif;padding:4px 10px;border-radius:99px;letter-spacing:.03em}
+.meta{padding:16px 16px 4px}
+h2{font:700 20px "Space Grotesk",sans-serif;margin:0}
+.meta p{margin:2px 0 0;color:var(--dim);font-size:14px}
+.play{margin:12px 16px 16px;padding:10px;text-align:center;border-radius:12px;background:var(--accent);color:#fff;font:700 15px "Space Grotesk",sans-serif}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div><h1>Playable Ads Portfolio</h1><p>Interactive 3D playable ads, built with <a href="https://github.com/doctormiw/drm-engine">drm-engine</a>. Tap a card to play in your browser (best on a phone).</p></div>
+<button id="theme" aria-label="Toggle theme">◐</button>
+</header>
+<div class="grid">
+<a class="card" href="https://doctormiw.github.io/previews/car-smash/"><div class="cover"><img src="car-smash/cover.jpg" alt="CarSmash" loading="lazy"><span class="badge">In development</span></div><div class="meta"><h2>CarSmash</h2><p>1.8 MB · 2026-11-08</p></div><span class="play">▶ Play</span></a>
+<a class="card" href="https://doctormiw.github.io/previews/hole/"><div class="cover"><img src="hole/cover.jpg" alt="HoleGame" loading="lazy"></div><div class="meta"><h2>HoleGame</h2><p>2.3 MB · 2026-11-07</p></div><span class="play">▶ Play</span></a>
+<a class="card" href="https://doctormiw.github.io/previews/laptop/"><div class="cover"><img src="laptop/cover.gif" alt="Break the Laptop" loading="lazy"></div><div class="meta"><h2>Break the Laptop</h2><p>2.5 MB · 2026-11-01</p></div><span class="play">▶ Play</span></a>
+</div>
+</main>
+<script>
+document.getElementById("theme").onclick=function(){var d=document.documentElement,dark=d.dataset.theme?d.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches,n=dark?"light":"dark";d.dataset.theme=n;try{localStorage.setItem("theme",n)}catch(e){}};
+</script>
+</body>
+</html>
