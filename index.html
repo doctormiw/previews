@@ -9,8 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <style>
-:root{--bg:#050a07;--card:#08140d;--text:#d6ffe6;--dim:#4fa874;--accent:#2dff7a;--line:#12402a;--glow:0 0 18px rgba(45,255,122,.35);--sweep:rgba(45,255,122,.08)}
-:root[data-theme=amber]{--bg:#0d0803;--card:#170f06;--text:#ffe2b0;--dim:#b07a2e;--accent:#ffa21f;--line:#4a2f10;--glow:0 0 18px rgba(255,162,31,.38);--sweep:rgba(255,162,31,.08)}
+:root{--bg:#0d0803;--card:#170f06;--text:#ffe2b0;--dim:#b07a2e;--accent:#ffa21f;--line:#4a2f10;--glow:0 0 18px rgba(255,162,31,.38);--sweep:rgba(255,162,31,.08)}
+:root[data-theme=green]{--bg:#050a07;--card:#08140d;--text:#d6ffe6;--dim:#4fa874;--accent:#2dff7a;--line:#12402a;--glow:0 0 18px rgba(45,255,122,.35);--sweep:rgba(45,255,122,.08)}
+:root[data-theme=cyan]{--bg:#06090f;--card:#0c1522;--text:#e6f6ff;--dim:#6fa0bf;--accent:#22d3ee;--line:#163048;--glow:0 0 20px rgba(34,211,238,.3);--sweep:rgba(34,211,238,.07)}
+:root[data-theme=violet]{--bg:#0b0a14;--card:#15132a;--text:#f2eeff;--dim:#8f86c4;--accent:#8b5cf6;--line:#2a2652;--glow:0 0 22px rgba(139,92,246,.35);--sweep:rgba(139,92,246,.08)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:500 15px/1.5 "JetBrains Mono",ui-monospace,monospace;transition:background .3s,color .3s}
 body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/40px 40px;opacity:.5;-webkit-mask-image:radial-gradient(circle at 50% 0,#000,transparent 75%);mask-image:radial-gradient(circle at 50% 0,#000,transparent 75%)}
@@ -43,7 +45,7 @@ h2{font:700 18px "JetBrains Mono",monospace;margin:0}
 <main>
 <header>
 <div><h1>Playable Ads Portfolio</h1><p>Interactive 3D playable ads. Tap a card to play in your browser (best on a phone).</p></div>
-<button id="theme" type="button">[ GREEN / AMBER ]</button>
+<button id="theme" type="button">[ AMBER ]</button>
 </header>
 <div class="grid">
 <a class="card" href="https://doctormiw.github.io/previews/car-smash/"><div class="cover"><img src="car-smash/cover.jpg" alt="CarSmash" loading="lazy"><span class="badge">In development</span></div><div class="meta"><h2>CarSmash</h2><p>1.8 MB · 2026-11-08</p></div><span class="play">▶ Play</span></a>
@@ -52,7 +54,7 @@ h2{font:700 18px "JetBrains Mono",monospace;margin:0}
 </div>
 </main>
 <script>
-document.getElementById("theme").addEventListener("click",function(){var d=document.documentElement,n=d.dataset.theme==="amber"?"green":"amber";d.dataset.theme=n;try{localStorage.setItem("theme",n)}catch(e){}});
+var T=["amber","green","cyan","violet"],b=document.getElementById("theme"),d=document.documentElement;function set(n){d.dataset.theme=n;b.textContent="[ "+n.toUpperCase()+" ]"}set(d.dataset.theme||"amber");b.addEventListener("click",function(){var n=T[(T.indexOf(d.dataset.theme)+1)%T.length];set(n);try{localStorage.setItem("theme",n)}catch(e){}});
 </script>
 </body>
 </html>
