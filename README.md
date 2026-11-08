@@ -1,6 +1,6 @@
 # Playable Ads Portfolio
 
-Interactive 3D playable ads, built with [drm-engine](https://github.com/doctormiw/drm-engine). Tap a picture to play the HTML version in your browser (best on a phone).
+Interactive 3D playable ads. Tap a picture to play the HTML version in your browser (best on a phone).
 
 <table>
 <tr>

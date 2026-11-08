@@ -6,37 +6,44 @@
 <title>Playable Ads Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <style>
-:root{--bg:#f5f4f0;--card:#fff;--text:#16161a;--dim:#6b6b76;--accent:#ff5c35;--line:#e4e2dc;--shadow:0 8px 30px rgba(0,0,0,.08)}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e0f13;--card:#181a21;--text:#f1f1f4;--dim:#8d8f9c;--line:#262933;--shadow:0 8px 30px rgba(0,0,0,.45)}}
-:root[data-theme=dark]{--bg:#0e0f13;--card:#181a21;--text:#f1f1f4;--dim:#8d8f9c;--line:#262933;--shadow:0 8px 30px rgba(0,0,0,.45)}
+:root{--bg:#050a07;--card:#08140d;--text:#d6ffe6;--dim:#4fa874;--accent:#2dff7a;--line:#12402a;--glow:0 0 18px rgba(45,255,122,.35);--sweep:rgba(45,255,122,.08)}
+:root[data-theme=amber]{--bg:#0d0803;--card:#170f06;--text:#ffe2b0;--dim:#b07a2e;--accent:#ffa21f;--line:#4a2f10;--glow:0 0 18px rgba(255,162,31,.38);--sweep:rgba(255,162,31,.08)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.5 Inter,system-ui,sans-serif;transition:background .25s,color .25s}
-main{max-width:1040px;margin:0 auto;padding:0 16px 64px}
+body{margin:0;background:var(--bg);color:var(--text);font:500 15px/1.5 "JetBrains Mono",ui-monospace,monospace;transition:background .3s,color .3s}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/40px 40px;opacity:.5;-webkit-mask-image:radial-gradient(circle at 50% 0,#000,transparent 75%);mask-image:radial-gradient(circle at 50% 0,#000,transparent 75%)}
+body::after{content:"";position:fixed;inset:0;z-index:4;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px)}
+.sweep{position:fixed;left:0;right:0;top:0;height:140px;z-index:4;pointer-events:none;background:linear-gradient(180deg,transparent,var(--sweep),transparent);animation:sw 5s linear infinite}
+@keyframes sw{from{transform:translateY(-140px)}to{transform:translateY(100vh)}}
+main{position:relative;z-index:2;max-width:1040px;margin:0 auto;padding:0 16px 64px}
 header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:48px 0 32px}
-h1{font:700 clamp(30px,6vw,52px)/1.05 "Space Grotesk",sans-serif;margin:0 0 12px;letter-spacing:-.02em}
+h1{font:700 clamp(28px,6vw,48px)/1.1 "JetBrains Mono",monospace;margin:0 0 12px;letter-spacing:-.03em;text-shadow:var(--glow)}
+h1::after{content:"\258c";margin-left:4px;color:var(--accent);animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
 header p{margin:0;color:var(--dim);max-width:520px}
-header a{color:var(--accent);text-decoration:none}
-#theme{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:20px;cursor:pointer;box-shadow:var(--shadow)}
+#theme{flex:none;padding:10px 14px;border:1px solid var(--accent);border-radius:2px;background:transparent;color:var(--accent);font:700 13px "JetBrains Mono",monospace;cursor:pointer;box-shadow:var(--glow)}
+#theme:hover{background:var(--accent);color:var(--bg)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
-.card{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .2s}
-.card:hover{transform:translateY(-4px)}
-.cover{position:relative;aspect-ratio:390/844;max-height:420px;overflow:hidden;background:var(--line)}
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:var(--glow)}
+.cover{position:relative;aspect-ratio:390/700;overflow:hidden;background:var(--line)}
 .cover img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
-.badge{position:absolute;top:12px;left:12px;background:var(--accent);color:#fff;font:700 12px "Space Grotesk",sans-serif;padding:4px 10px;border-radius:99px;letter-spacing:.03em}
-.meta{padding:16px 16px 4px}
-h2{font:700 20px "Space Grotesk",sans-serif;margin:0}
-.meta p{margin:2px 0 0;color:var(--dim);font-size:14px}
-.play{margin:12px 16px 16px;padding:10px;text-align:center;border-radius:12px;background:var(--accent);color:#fff;font:700 15px "Space Grotesk",sans-serif}
+.badge{position:absolute;top:10px;left:10px;background:var(--accent);color:var(--bg);font:700 11px "JetBrains Mono",monospace;padding:3px 9px;border-radius:2px;text-transform:uppercase;letter-spacing:.04em}
+.meta{padding:14px 16px 4px}
+h2{font:700 18px "JetBrains Mono",monospace;margin:0}
+.meta p{margin:2px 0 0;color:var(--dim);font-size:13px}
+.play{margin:12px 16px 16px;padding:10px;text-align:center;border-radius:2px;background:var(--accent);color:var(--bg);font:700 14px "JetBrains Mono",monospace}
+@media(prefers-reduced-motion:reduce){.sweep,h1::after{animation:none}}
 </style>
 </head>
 <body>
+<div class="sweep"></div>
 <main>
 <header>
-<div><h1>Playable Ads Portfolio</h1><p>Interactive 3D playable ads, built with <a href="https://github.com/doctormiw/drm-engine">drm-engine</a>. Tap a card to play in your browser (best on a phone).</p></div>
-<button id="theme" aria-label="Toggle theme">◐</button>
+<div><h1>Playable Ads Portfolio</h1><p>Interactive 3D playable ads. Tap a card to play in your browser (best on a phone).</p></div>
+<button id="theme" type="button">[ GREEN / AMBER ]</button>
 </header>
 <div class="grid">
 <a class="card" href="https://doctormiw.github.io/previews/car-smash/"><div class="cover"><img src="car-smash/cover.jpg" alt="CarSmash" loading="lazy"><span class="badge">In development</span></div><div class="meta"><h2>CarSmash</h2><p>1.8 MB · 2026-11-08</p></div><span class="play">▶ Play</span></a>
@@ -45,7 +52,7 @@ h2{font:700 20px "Space Grotesk",sans-serif;margin:0}
 </div>
 </main>
 <script>
-document.getElementById("theme").onclick=function(){var d=document.documentElement,dark=d.dataset.theme?d.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches,n=dark?"light":"dark";d.dataset.theme=n;try{localStorage.setItem("theme",n)}catch(e){}};
+document.getElementById("theme").addEventListener("click",function(){var d=document.documentElement,n=d.dataset.theme==="amber"?"green":"amber";d.dataset.theme=n;try{localStorage.setItem("theme",n)}catch(e){}});
 </script>
 </body>
 </html>
